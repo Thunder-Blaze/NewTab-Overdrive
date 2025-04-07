@@ -5,7 +5,9 @@ A modern, responsive new tab page built with Next.js, featuring a beautiful UI a
 ## Preview
 
 https://github.com/user-attachments/assets/d42d201c-0c1b-4ba2-a84b-34268b54692c
+
 https://github.com/user-attachments/assets/0d731226-9327-4d5f-924d-e73bdcdc86cd
+
 https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
 
 
