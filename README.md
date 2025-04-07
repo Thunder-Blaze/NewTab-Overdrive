@@ -1,6 +1,10 @@
 # Material New Tab Dashboard
 
 A modern, responsive new tab page built with Next.js, featuring a beautiful UI and various widgets for productivity and information.
+Works way faster online as compared to the video. The video was lagging due to my PC's low specs and the pages weren't cached while recording.
+
+# Deployed Link
+https://new-tab-overdrive.vercel.app/
 
 ## Preview
 
