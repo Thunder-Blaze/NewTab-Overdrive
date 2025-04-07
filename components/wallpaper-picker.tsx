@@ -18,7 +18,10 @@ interface WallpaperPickerProps {
 
 export function WallpaperPicker({ onSelectWallpaper }: WallpaperPickerProps) {
     const [open, setOpen] = useState(false)
-    const [wallpapers, setWallpapers] = useState<string[]>(["https://images8.alphacoders.com/790/790044.png", "https://w.wallhaven.cc/full/ym/wallhaven-ym1m8l.jpg"])
+    const [wallpapers, setWallpapers] = useState<string[]>([
+        'https://images8.alphacoders.com/790/790044.png',
+        'https://w.wallhaven.cc/full/ym/wallhaven-ym1m8l.jpg',
+    ])
     const [newWallpaper, setNewWallpaper] = useState('')
 
     // Load wallpapers from localStorage on mount

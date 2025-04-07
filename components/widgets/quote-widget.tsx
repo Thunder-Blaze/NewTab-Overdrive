@@ -129,7 +129,11 @@ export function QuoteWidget() {
                     disabled={loading}
                 >
                     {loading ? (
-                        <ClipLoader size={16} color="hsl(var(--primary))" className="mr-2" />
+                        <ClipLoader
+                            size={16}
+                            color="hsl(var(--primary))"
+                            className="mr-2"
+                        />
                     ) : (
                         <FaRedo className="h-4 w-4 mr-2" />
                     )}

@@ -32,12 +32,19 @@ export function NewsWidget() {
         try {
             // Check cache first
             const cachedData = localStorage.getItem('newsArticles')
-            const cachedTimestamp = localStorage.getItem('newsArticlesTimestamp')
-            
+            const cachedTimestamp = localStorage.getItem(
+                'newsArticlesTimestamp'
+            )
+
             const now = new Date().getTime()
             const oneHourMs = 60 * 60 * 1000
-            
-            if (cachedData && cachedTimestamp && (now - Number(cachedTimestamp)) < oneHourMs && forced === false) {
+
+            if (
+                cachedData &&
+                cachedTimestamp &&
+                now - Number(cachedTimestamp) < oneHourMs &&
+                forced === false
+            ) {
                 setArticles(JSON.parse(cachedData))
                 setLoading(false)
                 return
@@ -60,11 +67,11 @@ export function NewsWidget() {
 
             const data = await response.json()
             const newsArticles = data.articles || []
-            
+
             // Cache the results
             localStorage.setItem('newsArticles', JSON.stringify(newsArticles))
             localStorage.setItem('newsArticlesTimestamp', now.toString())
-            
+
             setArticles(newsArticles)
         } catch (err) {
             console.error('News fetch error:', err)
@@ -146,7 +153,11 @@ export function NewsWidget() {
                     disabled={loading}
                 >
                     {loading ? (
-                        <ClipLoader size={16} color="hsl(var(--primary))" className="mr-2" />
+                        <ClipLoader
+                            size={16}
+                            color="hsl(var(--primary))"
+                            className="mr-2"
+                        />
                     ) : (
                         <FaRedo className="h-4 w-4 mr-2" />
                     )}

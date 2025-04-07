@@ -21,7 +21,6 @@ export default function Home() {
         }
     }, [wallpaper])
 
-    
     // useEffect(() => {
     //     const lenis = new Lenis();
     //     function raf(time: number) {

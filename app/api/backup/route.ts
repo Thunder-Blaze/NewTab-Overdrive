@@ -49,4 +49,4 @@ export async function GET(req: Request) {
         console.error('Get backups error:', error)
         return new NextResponse('Internal Server Error', { status: 500 })
     }
-} 
+}

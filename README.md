@@ -9,24 +9,25 @@ A modern, responsive new tab page built with Next.js, featuring a beautiful UI a
 - **Authentication**: Sign in with Google or email/password
 - **Theme Support**: Light and dark mode with customizable accent colors
 - **Widgets**:
-  - Clock
-  - Weather
-  - Todo List
-  - Quote of the Day
-  - Codeforces Contests
-  - GitHub Contributors
-  - News Feed
-  - Search (Google, DuckDuckGo, Bing, Brave, YouTube)
-  - Spotify Search
-  - And more...
+    - Clock
+    - Weather
+    - Todo List
+    - Quote of the Day
+    - Codeforces Contests
+    - GitHub Contributors
+    - News Feed
+    - Search (Google, DuckDuckGo, Bing, Brave, YouTube)
+    - Spotify Search
+    - And more...
 - **Data Management**:
-  - Local storage for widget data
-  - Cloud backup and restore
-  - Export/import functionality
+    - Local storage for widget data
+    - Cloud backup and restore
+    - Export/import functionality
 
 ## Tech Stack
 
 ### Frontend
+
 - **Next.js 15**: React framework for server-rendered applications
 - **React 19**: UI library
 - **TypeScript**: Type-safe JavaScript
@@ -38,6 +39,7 @@ A modern, responsive new tab page built with Next.js, featuring a beautiful UI a
 - **Zod**: Schema validation
 
 ### Backend
+
 - **NextAuth.js**: Authentication
 - **MongoDB**: Database
 - **Mongoose**: MongoDB ODM
@@ -46,6 +48,7 @@ A modern, responsive new tab page built with Next.js, featuring a beautiful UI a
 - **nodemailer**: Email functionality
 
 ### APIs & Services
+
 - **OpenWeather API**: Weather data
 - **News API**: News articles
 - **Codeforces API**: Programming contests
@@ -69,12 +72,14 @@ A modern, responsive new tab page built with Next.js, featuring a beautiful UI a
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Thunder-Blaze/NewTab-Overdrive.git
 cd NewTab-Overdrive
 ```
 
 2. Install dependencies:
+
 ```bash
 bun install
 ```
@@ -82,6 +87,7 @@ bun install
 3. Create a `.env` file in the root directory following the env.sample
 
 4. Run the development server:
+
 ```bash
 bun run dev
 ```
@@ -111,6 +117,7 @@ NewTab-Overdrive/
 ## Widgets Overview
 
 ### Home Tab
+
 - **Search App**: Unified search across multiple engines
 - **Clock**: Current time and date
 - **Weather**: Current weather and forecast
@@ -118,6 +125,7 @@ NewTab-Overdrive/
 - **Quote Widget**: Daily inspirational quotes
 
 ### Info Tab
+
 - **Codeforces Widget**: Upcoming programming contests
 - **GitHub Contributors**: Repository contributors
 - **News Widget**: Latest news articles
@@ -126,18 +134,19 @@ NewTab-Overdrive/
 - **Movies Widget**: Movie information
 
 ### Search Tab
+
 - **Google Search**: Web search
 - **Spotify Search**: Music search
 
 ### Settings Tab
+
 - **Theme Toggle**: Light/dark mode
 - **Accent Color Picker**: Customize UI colors
 - **Wallpaper Picker**: Change new tab background
 - **Backup & Restore**: Manage widget data
-  - Local backup/restore
-  - Cloud backup/restore
-  - Clear all data
-
+    - Local backup/restore
+    - Cloud backup/restore
+    - Clear all data
 
 ## Acknowledgments
 

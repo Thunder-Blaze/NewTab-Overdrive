@@ -21,4 +21,4 @@ const backupSchema = new mongoose.Schema(
 
 const Backup = mongoose.models?.Backup || mongoose.model('Backup', backupSchema)
 
-export { Backup } 
+export { Backup }

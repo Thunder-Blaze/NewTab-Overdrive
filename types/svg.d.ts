@@ -1,8 +1,8 @@
 // types/svg.d.ts
 declare module '*.svg' {
-  export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
-  const src: string;
-  export default src;
+    export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>
+    const src: string
+    export default src
 }
 
 // declare module '*.svg' {
@@ -19,7 +19,7 @@ declare module '*.svg' {
 //     const content: FC<SVGProps<SVGElement>>
 //     export default content
 //   }
-  
+
 //   declare module '*.svg?url' {
 //     const content: any
 //     export default content

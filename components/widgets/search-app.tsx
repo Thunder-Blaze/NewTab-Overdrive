@@ -125,9 +125,7 @@ const SearchApp: React.FC = () => {
                     onClick={toggleDropdown}
                 >
                     {ActiveSEicon && (
-                        <ActiveSEicon
-                            className="text-foreground dark:text-background invert dark:invert-0 w-9 h-9"
-                        />
+                        <ActiveSEicon className="text-foreground dark:text-background invert dark:invert-0 w-9 h-9" />
                     )}
                 </button>
                 {isDropdownOpen && (

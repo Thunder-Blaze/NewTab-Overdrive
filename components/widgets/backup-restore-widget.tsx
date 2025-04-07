@@ -4,8 +4,20 @@ import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { useToast } from '@/hooks/use-toast'
-import { FaDownload, FaUpload, FaTrash, FaCloudUploadAlt, FaCloudDownloadAlt } from 'react-icons/fa'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import {
+    FaDownload,
+    FaUpload,
+    FaTrash,
+    FaCloudUploadAlt,
+    FaCloudDownloadAlt,
+} from 'react-icons/fa'
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select'
 import { SignInButton } from '@/components/shared/signin-button'
 import { SignUpButton } from '@/components/shared/signup-button'
 import { SignOutButton } from '@/components/shared/signout-button'
@@ -25,7 +37,7 @@ const STORAGE_KEYS = [
     'ghContributorsTimestamp',
     'activeSearchEngine',
     'accent-color',
-    'wallpaper'
+    'wallpaper',
 ]
 
 interface Backup {
@@ -64,19 +76,25 @@ export function BackupRestoreWidget() {
     const backupData = () => {
         try {
             const backup: Record<string, string> = {}
-            
+
             // Collect all localStorage data
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i)
-                if (key && STORAGE_KEYS.some(storageKey => 
-                    key === storageKey || key.startsWith(storageKey)
-                )) {
+                if (
+                    key &&
+                    STORAGE_KEYS.some(
+                        (storageKey) =>
+                            key === storageKey || key.startsWith(storageKey)
+                    )
+                ) {
                     backup[key] = localStorage.getItem(key) || ''
                 }
             }
 
             // Create and download backup file
-            const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' })
+            const blob = new Blob([JSON.stringify(backup, null, 2)], {
+                type: 'application/json',
+            })
             const url = URL.createObjectURL(blob)
             const a = document.createElement('a')
             a.href = url
@@ -102,13 +120,17 @@ export function BackupRestoreWidget() {
     const uploadBackup = async () => {
         try {
             const backup: Record<string, string> = {}
-            
+
             // Collect all localStorage data
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i)
-                if (key && STORAGE_KEYS.some(storageKey => 
-                    key === storageKey || key.startsWith(storageKey)
-                )) {
+                if (
+                    key &&
+                    STORAGE_KEYS.some(
+                        (storageKey) =>
+                            key === storageKey || key.startsWith(storageKey)
+                    )
+                ) {
                     backup[key] = localStorage.getItem(key) || ''
                 }
             }
@@ -148,14 +170,17 @@ export function BackupRestoreWidget() {
         }
 
         try {
-            const backup = backups.find(b => b._id === selectedBackup)
+            const backup = backups.find((b) => b._id === selectedBackup)
             if (!backup) throw new Error('Backup not found')
 
             // Clear existing data
-            STORAGE_KEYS.forEach(key => {
+            STORAGE_KEYS.forEach((key) => {
                 for (let i = 0; i < localStorage.length; i++) {
                     const storageKey = localStorage.key(i)
-                    if (storageKey && (storageKey === key || storageKey.startsWith(key))) {
+                    if (
+                        storageKey &&
+                        (storageKey === key || storageKey.startsWith(key))
+                    ) {
                         localStorage.removeItem(storageKey)
                     }
                 }
@@ -170,7 +195,8 @@ export function BackupRestoreWidget() {
 
             toast({
                 title: 'Restore successful',
-                description: 'Your data has been restored from the cloud. Please refresh the page to see changes.',
+                description:
+                    'Your data has been restored from the cloud. Please refresh the page to see changes.',
             })
         } catch (error) {
             toast({
@@ -191,12 +217,16 @@ export function BackupRestoreWidget() {
             reader.onload = (e) => {
                 try {
                     const backup = JSON.parse(e.target?.result as string)
-                    
+
                     // Clear existing data
-                    STORAGE_KEYS.forEach(key => {
+                    STORAGE_KEYS.forEach((key) => {
                         for (let i = 0; i < localStorage.length; i++) {
                             const storageKey = localStorage.key(i)
-                            if (storageKey && (storageKey === key || storageKey.startsWith(key))) {
+                            if (
+                                storageKey &&
+                                (storageKey === key ||
+                                    storageKey.startsWith(key))
+                            ) {
                                 localStorage.removeItem(storageKey)
                             }
                         }
@@ -211,7 +241,8 @@ export function BackupRestoreWidget() {
 
                     toast({
                         title: 'Restore successful',
-                        description: 'Your data has been restored successfully. Please refresh the page to see changes.',
+                        description:
+                            'Your data has been restored successfully. Please refresh the page to see changes.',
                     })
                 } catch (error) {
                     toast({
@@ -234,12 +265,19 @@ export function BackupRestoreWidget() {
     }
 
     const clearData = () => {
-        if (window.confirm('Are you sure you want to clear all data? This action cannot be undone.')) {
+        if (
+            window.confirm(
+                'Are you sure you want to clear all data? This action cannot be undone.'
+            )
+        ) {
             try {
-                STORAGE_KEYS.forEach(key => {
+                STORAGE_KEYS.forEach((key) => {
                     for (let i = 0; i < localStorage.length; i++) {
                         const storageKey = localStorage.key(i)
-                        if (storageKey && (storageKey === key || storageKey.startsWith(key))) {
+                        if (
+                            storageKey &&
+                            (storageKey === key || storageKey.startsWith(key))
+                        ) {
                             localStorage.removeItem(storageKey)
                         }
                     }
@@ -249,7 +287,7 @@ export function BackupRestoreWidget() {
                     title: 'Data cleared',
                     description: 'All data has been cleared successfully.',
                 })
-                
+
                 // Reload the page after a short delay to show the toast
                 setTimeout(() => {
                     window.location.reload()
@@ -267,7 +305,9 @@ export function BackupRestoreWidget() {
     return (
         <Card>
             <CardHeader className="bg-primary/10 flex flex-row items-center justify-between space-y-0 py-3">
-                <CardTitle className="text-lg font-medium">Backup & Restore</CardTitle>
+                <CardTitle className="text-lg font-medium">
+                    Backup & Restore
+                </CardTitle>
             </CardHeader>
             <CardContent className="p-6">
                 <div className="flex flex-col gap-4">
@@ -303,7 +343,10 @@ export function BackupRestoreWidget() {
                                 <p className="text-sm text-muted-foreground">
                                     Upload your new tab data to the cloud
                                 </p>
-                                <Button onClick={uploadBackup} className="w-full">
+                                <Button
+                                    onClick={uploadBackup}
+                                    className="w-full"
+                                >
                                     <FaCloudUploadAlt className="mr-2" />
                                     Upload to Cloud
                                 </Button>
@@ -321,12 +364,18 @@ export function BackupRestoreWidget() {
                                     id="restore-file"
                                 />
                                 <Button
-                                    onClick={() => document.getElementById('restore-file')?.click()}
+                                    onClick={() =>
+                                        document
+                                            .getElementById('restore-file')
+                                            ?.click()
+                                    }
                                     className="w-full"
                                     disabled={isLoading}
                                 >
                                     <FaUpload className="mr-2" />
-                                    {isLoading ? 'Restoring...' : 'Restore Data'}
+                                    {isLoading
+                                        ? 'Restoring...'
+                                        : 'Restore Data'}
                                 </Button>
                             </div>
 
@@ -335,14 +384,22 @@ export function BackupRestoreWidget() {
                                     Restore from cloud backup
                                 </p>
                                 <div className="flex gap-2">
-                                    <Select value={selectedBackup} onValueChange={setSelectedBackup}>
+                                    <Select
+                                        value={selectedBackup}
+                                        onValueChange={setSelectedBackup}
+                                    >
                                         <SelectTrigger className="flex-1">
                                             <SelectValue placeholder="Select a backup" />
                                         </SelectTrigger>
                                         <SelectContent>
                                             {backups.map((backup) => (
-                                                <SelectItem key={backup._id} value={backup._id}>
-                                                    {new Date(backup.createdAt).toLocaleString()}
+                                                <SelectItem
+                                                    key={backup._id}
+                                                    value={backup._id}
+                                                >
+                                                    {new Date(
+                                                        backup.createdAt
+                                                    ).toLocaleString()}
                                                 </SelectItem>
                                             ))}
                                         </SelectContent>
@@ -387,4 +444,4 @@ export function BackupRestoreWidget() {
             </CardContent>
         </Card>
     )
-} 
+}

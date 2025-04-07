@@ -32,12 +32,19 @@ export function GithubContributorsWidget() {
         try {
             // Check cache first
             const cachedData = localStorage.getItem('ghContributors')
-            const cachedTimestamp = localStorage.getItem('ghContributorsTimestamp')
-            
+            const cachedTimestamp = localStorage.getItem(
+                'ghContributorsTimestamp'
+            )
+
             const now = new Date().getTime()
             const oneDayMs = 24 * 60 * 60 * 1000
-            
-            if (cachedData && cachedTimestamp && (now - Number(cachedTimestamp)) < oneDayMs && forced === false) {
+
+            if (
+                cachedData &&
+                cachedTimestamp &&
+                now - Number(cachedTimestamp) < oneDayMs &&
+                forced === false
+            ) {
                 setContributors(JSON.parse(cachedData))
                 setLoading(false)
                 return
@@ -62,11 +69,11 @@ export function GithubContributorsWidget() {
 
             const data = await response.json()
             const contributors = data.contributors || []
-            
+
             // Cache the data
             localStorage.setItem('ghContributors', JSON.stringify(contributors))
             localStorage.setItem('ghContributorsTimestamp', String(now))
-            
+
             setContributors(contributors)
         } catch (err) {
             console.error('GitHub contributors fetch error:', err)
@@ -156,7 +163,11 @@ export function GithubContributorsWidget() {
                     disabled={loading}
                 >
                     {loading ? (
-                        <ClipLoader size={16} color="hsl(var(--primary))" className="mr-2" />
+                        <ClipLoader
+                            size={16}
+                            color="hsl(var(--primary))"
+                            className="mr-2"
+                        />
                     ) : (
                         <FaRedo className="h-4 w-4 mr-2" />
                     )}

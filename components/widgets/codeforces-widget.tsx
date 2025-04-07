@@ -35,11 +35,16 @@ export function CodeforcesWidget() {
             // Check cache first
             const cachedData = localStorage.getItem('cfContests')
             const cachedTimestamp = localStorage.getItem('cfContestsTimestamp')
-            
+
             const now = new Date().getTime()
             const oneDayMs = 24 * 60 * 60 * 1000
-            
-            if (cachedData && cachedTimestamp && (now - Number(cachedTimestamp)) < oneDayMs && forced === false) {
+
+            if (
+                cachedData &&
+                cachedTimestamp &&
+                now - Number(cachedTimestamp) < oneDayMs &&
+                forced === false
+            ) {
                 setContests(JSON.parse(cachedData))
                 setLoading(false)
                 return
@@ -62,11 +67,11 @@ export function CodeforcesWidget() {
 
             const data = await response.json()
             const contests = data.simplifiedContests || []
-            
+
             // Cache the new data
             localStorage.setItem('cfContests', JSON.stringify(contests))
             localStorage.setItem('cfContestsTimestamp', now.toString())
-            
+
             setContests(contests)
         } catch (err) {
             console.error('Codeforces fetch error:', err)
@@ -141,7 +146,11 @@ export function CodeforcesWidget() {
                     disabled={loading}
                 >
                     {loading ? (
-                        <ClipLoader size={16} color="hsl(var(--primary))" className="mr-2" />
+                        <ClipLoader
+                            size={16}
+                            color="hsl(var(--primary))"
+                            className="mr-2"
+                        />
                     ) : (
                         <FaRedo className="h-4 w-4 mr-2" />
                     )}

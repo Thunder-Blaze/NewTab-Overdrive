@@ -3,7 +3,11 @@
 
 import { useLenis } from '@/hooks/use-lenis'
 
-export default function LenisProvider({ children }: { children: React.ReactNode }) {
-  useLenis()
-  return <>{children}</>
+export default function LenisProvider({
+    children,
+}: {
+    children: React.ReactNode
+}) {
+    useLenis()
+    return <>{children}</>
 }

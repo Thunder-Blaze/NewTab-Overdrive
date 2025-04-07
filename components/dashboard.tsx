@@ -43,13 +43,13 @@ export default function Dashboard({
             }}
         >
             <div className="w-full max-w-6xl mx-auto">
-                <motion.div 
+                <motion.div
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
                     className="flex justify-between items-center mb-6"
                 >
-                    <h1 className="text-2xl font-bold">Dashboard</h1>
+                    <h1 className="text-2xl font-bold">New Tab</h1>
                     <div className="flex items-center gap-2">
                         <AccentColorPicker />
                         <WallpaperPicker onSelectWallpaper={setWallpaper} />
@@ -59,22 +59,38 @@ export default function Dashboard({
 
                 <Tabs defaultValue="home" className="w-full">
                     <TabsList className="grid grid-cols-4 mb-8">
-                        <TabsTrigger value="home" className="text-lg py-3 transition-all duration-200 active:scale-95">
+                        <TabsTrigger
+                            value="home"
+                            className="text-lg py-3 transition-all duration-200 active:scale-95"
+                        >
                             Home
                         </TabsTrigger>
-                        <TabsTrigger value="info" className="text-lg py-3 transition-all duration-200 active:scale-95">
+                        <TabsTrigger
+                            value="info"
+                            className="text-lg py-3 transition-all duration-200 active:scale-95"
+                        >
                             Info
                         </TabsTrigger>
-                        <TabsTrigger value="search" className="text-lg py-3 transition-all duration-200 active:scale-95">
+                        <TabsTrigger
+                            value="search"
+                            className="text-lg py-3 transition-all duration-200 active:scale-95"
+                        >
                             Search
                         </TabsTrigger>
-                        <TabsTrigger value="settings" className="text-lg py-3 transition-all duration-200 active:scale-95">
+                        <TabsTrigger
+                            value="settings"
+                            className="text-lg py-3 transition-all duration-200 active:scale-95"
+                        >
                             Settings
                         </TabsTrigger>
                     </TabsList>
 
                     <AnimatePresence mode="wait">
-                        <TabsContent key="home" value="home" className="flex flex-col gap-8 items-center mt-2">
+                        <TabsContent
+                            key="home"
+                            value="home"
+                            className="flex flex-col gap-8 items-center mt-2"
+                        >
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -88,13 +104,16 @@ export default function Dashboard({
                                     <Clock key="clock" />,
                                     <WeatherWidget key="weather" />,
                                     <QuoteWidget key="quote" />,
-                                    <TodoList key="todo" />
+                                    <TodoList key="todo" />,
                                 ].map((widget, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                                        transition={{
+                                            duration: 0.3,
+                                            delay: index * 0.1,
+                                        }}
                                         className="break-inside-avoid mb-6"
                                     >
                                         {widget}
@@ -111,13 +130,16 @@ export default function Dashboard({
                                     <RecipesWidget key="recipes" />,
                                     <BooksWidget key="books" />,
                                     <MoviesWidget key="movies" />,
-                                    <NewsWidget key="news" />
+                                    <NewsWidget key="news" />,
                                 ].map((widget, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                                        transition={{
+                                            duration: 0.3,
+                                            delay: index * 0.1,
+                                        }}
                                         className="break-inside-avoid mb-6"
                                     >
                                         {widget}
@@ -126,17 +148,24 @@ export default function Dashboard({
                             </div>
                         </TabsContent>
 
-                        <TabsContent key="search" value="search" className="mt-2">
+                        <TabsContent
+                            key="search"
+                            value="search"
+                            className="mt-2"
+                        >
                             <div className="columns-1 gap-6 [column-fill:balance]">
                                 {[
                                     <GoogleSearchWidget key="google" />,
-                                    <SpotifySearchWidget key="spotify" />
+                                    <SpotifySearchWidget key="spotify" />,
                                 ].map((widget, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                                        transition={{
+                                            duration: 0.3,
+                                            delay: index * 0.1,
+                                        }}
                                         className="break-inside-avoid mb-6"
                                     >
                                         {widget}
@@ -145,13 +174,17 @@ export default function Dashboard({
                             </div>
                         </TabsContent>
 
-                        <TabsContent key="settings" value="settings" className="mt-2">
+                        <TabsContent
+                            key="settings"
+                            value="settings"
+                            className="mt-2"
+                        >
                             <div className="columns-1 gap-6 [column-fill:balance]">
                                 <BackupRestoreWidget />
                                 <div className="mt-6">
                                     <Link href="/donate" passHref>
-                                        <Button 
-                                            variant="outline" 
+                                        <Button
+                                            variant="outline"
                                             className="w-full flex items-center justify-center gap-2"
                                         >
                                             <Heart className="w-4 h-4 text-red-500" />

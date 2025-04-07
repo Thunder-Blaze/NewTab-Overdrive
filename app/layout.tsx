@@ -35,7 +35,9 @@ export default async function RootLayout({
     return (
         <SessionProvider session={session}>
             <html lang="en" suppressHydrationWarning>
-                <body className={`${urbanist.variable} ${jetbrainsMono.variable} antialiased overflow-hidden`}>
+                <body
+                    className={`${urbanist.variable} ${jetbrainsMono.variable} antialiased overflow-hidden`}
+                >
                     <ThemeProvider
                         attribute="class"
                         defaultTheme="system"
@@ -67,9 +69,7 @@ export default async function RootLayout({
                                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
                             }}
                         />
-                        <LenisProvider>
-                            {children}
-                        </LenisProvider>
+                        <LenisProvider>{children}</LenisProvider>
                     </ThemeProvider>
                 </body>
             </html>
