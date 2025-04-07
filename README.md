@@ -2,6 +2,14 @@
 
 A modern, responsive new tab page built with Next.js, featuring a beautiful UI and various widgets for productivity and information.
 
+## Preview
+
+https://github.com/user-attachments/assets/d42d201c-0c1b-4ba2-a84b-34268b54692c
+
+https://github.com/user-attachments/assets/0d731226-9327-4d5f-924d-e73bdcdc86cd
+
+
+
 ## Features
 
 - **Modern UI**: Built with shadcn/ui components and Tailwind CSS
