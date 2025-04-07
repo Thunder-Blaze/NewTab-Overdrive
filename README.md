@@ -5,8 +5,8 @@ A modern, responsive new tab page built with Next.js, featuring a beautiful UI a
 ## Preview
 
 https://github.com/user-attachments/assets/d42d201c-0c1b-4ba2-a84b-34268b54692c
-
 https://github.com/user-attachments/assets/0d731226-9327-4d5f-924d-e73bdcdc86cd
+https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
 
 
 
@@ -40,20 +40,37 @@ https://github.com/user-attachments/assets/0d731226-9327-4d5f-924d-e73bdcdc86cd
 - **React 19**: UI library
 - **TypeScript**: Type-safe JavaScript
 - **Tailwind CSS**: Utility-first CSS framework
-- **shadcn/ui**: Beautiful, accessible components
+- **shadcn/ui and radix-ui**: Beautiful, accessible components
+- **Next-Themes**: To manage light and dark modes and save its state
 - **Framer Motion**: Smooth animations and transitions
 - **React Icons**: Icon library
 - **React Hook Form**: Form handling
-- **Zod**: Schema validation
+- **React/Lenis**: For Smooth Scrolling
+- **SVGR/webpack**: To use SVGs by directly importing them as React Component 
+- **React-Animated-Cursor**: Awesome Animated Cursor
+- **React Spinners**: Used for loading animation while the API were fetching something
 
 ### Backend
 
-- **NextAuth.js**: Authentication
-- **MongoDB**: Database
+- **Next-Auth**: Used for Authenticaticating the users so that they can use backup & restore features
+- **MongoDB**: Database to store users and user backups
 - **Mongoose**: MongoDB ODM
 - **bcryptjs**: Password hashing
 - **jsonwebtoken**: JWT handling
-- **nodemailer**: Email functionality
+- **cors**: Allows to share data over different domains/origins (wasn't needed rn as both frontend and backend are hosted on same domain and the used APIs didn't required cross origin headers to belong to same origin but added for future use)
+- **Axios**: For get and post requests handled by the backend
+- **Date-fns**: Used to format date in case of News API
+- **Dotenv**: Used to access spotify credentials and generate spotify token in the backend
+- **Loadash**: Used to format and filter the data fetched from APIs in an optimised manner
+- **Chalk**: For logging fetched data in a coloured and formatted way (prrovides better distinction b/w heading and content)
+- **Nodemailer**: Email functionality to verify acc, reset pwd, etc
+- **Stripe**: Used to integrate the Stripe Checkout Form
+- **UUID**: To generate unique id identifiers for users
+- **Zod**: Schema validation
+
+### Extra (Useful Packages)
+- **Prettier**: Formats the code in same manner for all contributors
+- **Eslint**: Linting checks for potential issues and vulnerabilities
 
 ### APIs & Services
 
