@@ -36,7 +36,7 @@ export default async function RootLayout({
         <SessionProvider session={session}>
             <html lang="en" suppressHydrationWarning>
                 <body
-                    className={`${urbanist.variable} ${jetbrainsMono.variable} antialiased overflow-hidden`}
+                    className={`${urbanist.variable} ${jetbrainsMono.variable} antialiased`}
                 >
                     <ThemeProvider
                         attribute="class"
