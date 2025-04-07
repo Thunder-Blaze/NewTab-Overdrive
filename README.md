@@ -78,9 +78,12 @@ https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
 
 - **OpenWeather API**: Weather data
 - **News API**: News articles
+- **OMDB Movies API**: Movies Search
+- **Recipes API (Spoonacular)**: Finding Recipes
 - **Codeforces API**: Programming contests
 - **GitHub API**: Repository contributors
 - **Spotify API**: Music search
+- **ipinfo API**: Fetches Location based on IP Address
 - **Books API**: Book search
 - **Google Search API**: Integrated Google search
 - **Stripe API**: Payment Integration (Donation)
