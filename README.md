@@ -65,6 +65,7 @@ https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
 - **jsonwebtoken**: JWT handling
 - **cors**: Allows to share data over different domains/origins (wasn't needed rn as both frontend and backend are hosted on same domain and the used APIs didn't required cross origin headers to belong to same origin but added for future use)
 - **Axios**: For get and post requests handled by the backend
+- **Crypto**: For Encrypting the token and caching it
 - **Date-fns**: Used to format date in case of News API
 - **Dotenv**: Used to access spotify credentials and generate spotify token in the backend
 - **Loadash**: Used to format and filter the data fetched from APIs in an optimised manner
@@ -77,6 +78,9 @@ https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
 ### Extra (Useful Packages)
 - **Prettier**: Formats the code in same manner for all contributors
 - **Eslint**: Linting checks for potential issues and vulnerabilities
+
+### My Custom Made Package
+- **@thunderblaze/generate-spotify-token**: A Package that will help you create and cache the spotify token generated from your credentials until the token expires.
 
 ### APIs & Services
 
