@@ -57,8 +57,6 @@ export async function GET(req: NextRequest) {
             }
         )
 
-        console.log(searchResponse.data.tracks.items)
-
         const tracks: SpotifyTrack[] = searchResponse.data.tracks.items
 
         const simplifiedTracks: SimplifiedTrack[] = lodash.map(
