@@ -1,25 +1,24 @@
 name: Check Code Quality and Deploy
+env:
+    VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
     push:
         branches: [critical]
-    pull_request:
 
 jobs:
-    quality-checks:
+    quality-and-deploy:
         runs-on: ubuntu-latest
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v3
-
-            - name: Set up Node.js
-              uses: actions/setup-node@v4
+              uses: actions/checkout@v4
               with:
-                  node-version: '22' # or your version
+                  fetch-depth: 0
 
-            - name: Install Bun
-              run: npm i -g bun
+            - name: Set up Bun
+              uses: oven-sh/setup-bun@v2
 
             - name: Install Dependencies
               run: bun i --no-save
@@ -30,10 +29,14 @@ jobs:
             - name: Run Prettier Check
               run: bun run format:check
 
-    deploy:
-        needs: quality-checks
-        runs-on: ubuntu-latest
-        if: success()
-        steps:
-            - name: Trigger Vercel Deploy Hook
-              run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"
+            - name: Install Vercel CLI
+              run: bun install --global vercel@latest
+
+            - name: Pull Vercel Environment Information
+              run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+            - name: Build Project Artifacts
+              run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+            - name: Deploy Project Artifacts to Vercel
+              run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
