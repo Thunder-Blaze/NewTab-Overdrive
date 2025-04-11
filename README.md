@@ -26,6 +26,7 @@ https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
     - Weather
     - Todo List
     - Quote of the Day
+    - Random Memes
     - Codeforces Contests
     - GitHub Contributors
     - News Feed
@@ -98,6 +99,7 @@ https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
 - **Stripe API**: Payment Integration (Donation)
 - **DummyJSON API**: Dummy Quotes
 - **Twilio API**: Had setup it and wanted to use it to send mails/sms whenever there was a CF contest but it somehow didn't work out because of time and it needing Verified Numbers
+- **Memes API**: Random Reddit Memes
 
 ## Getting Started
 
