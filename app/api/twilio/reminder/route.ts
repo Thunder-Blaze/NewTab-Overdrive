@@ -10,8 +10,8 @@ export async function POST() {
     try {
         const message = await client.messages.create({
             body: '🧠 Your daily reminder: Stay focused and crush your goals!',
-            from: process.env.TWILIO_PHONE_NUMBER || "",
-            to: process.env.USER_PHONE_NUMBER || "",
+            from: process.env.TWILIO_PHONE_NUMBER || '',
+            to: process.env.USER_PHONE_NUMBER || '',
         })
 
         return NextResponse.json({ sid: message.sid }, { status: 200 })

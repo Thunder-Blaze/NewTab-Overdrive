@@ -88,7 +88,7 @@
         "uuid": "^11.0.5",
         "vaul": "^0.9.6",
         "zod": "^3.24.1",
-        "@thunderblaze/generate-spotify-token" : "^1.0.0"
+        "@thunderblaze/generate-spotify-token": "^1.0.0"
     },
     "devDependencies": {
         "@types/bcryptjs": "^2.4.6",

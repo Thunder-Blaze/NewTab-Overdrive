@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { Clock } from '@/components/widgets/clock'
 import { WeatherWidget } from '@/components/widgets/weather-widget'
 import { QuoteWidget } from '@/components/widgets/quote-widget'
+import { MemeWidget } from '@/components/widgets/meme-widget'
 import { TodoList } from '@/components/widgets/todo-list'
 import { CodeforcesWidget } from '@/components/widgets/codeforces-widget'
 import { GithubContributorsWidget } from '@/components/widgets/github-contributors-widget'
@@ -104,6 +105,7 @@ export default function Dashboard({
                                     <Clock key="clock" />,
                                     <WeatherWidget key="weather" />,
                                     <QuoteWidget key="quote" />,
+                                    <MemeWidget key="meme" />,
                                     <TodoList key="todo" />,
                                 ].map((widget, index) => (
                                     <motion.div

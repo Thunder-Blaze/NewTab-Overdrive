@@ -4,6 +4,7 @@ A modern, responsive new tab page built with Next.js, featuring a beautiful UI a
 Works way faster online as compared to the video. The video was lagging due to my PC's low specs and the pages weren't cached while recording.
 
 # Deployed Link
+
 https://new-tab-overdrive.vercel.app/
 
 ## Preview
@@ -13,8 +14,6 @@ https://github.com/user-attachments/assets/d42d201c-0c1b-4ba2-a84b-34268b54692c
 https://github.com/user-attachments/assets/0d731226-9327-4d5f-924d-e73bdcdc86cd
 
 https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
-
-
 
 ## Features
 
@@ -52,7 +51,7 @@ https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
 - **React Icons**: Icon library
 - **React Hook Form**: Form handling
 - **React/Lenis**: For Smooth Scrolling
-- **SVGR/webpack**: To use SVGs by directly importing them as React Component 
+- **SVGR/webpack**: To use SVGs by directly importing them as React Component
 - **React-Animated-Cursor**: Awesome Animated Cursor
 - **React Spinners**: Used for loading animation while the API were fetching something
 
@@ -76,10 +75,12 @@ https://github.com/user-attachments/assets/91b35ee1-a2bf-4b18-b85e-bf2851dd12f0
 - **Zod**: Schema validation
 
 ### Extra (Useful Packages)
+
 - **Prettier**: Formats the code in same manner for all contributors
 - **Eslint**: Linting checks for potential issues and vulnerabilities
 
 ### My Custom Made Package
+
 - **@thunderblaze/generate-spotify-token**: A Package that will help you create and cache the spotify token generated from your credentials until the token expires.
 
 ### APIs & Services

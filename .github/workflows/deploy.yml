@@ -1,31 +1,31 @@
 name: Code Quality Checks
 
 on:
-  push:
-    branches: [critical]
-  pull_request:
+    push:
+        branches: [critical]
+    pull_request:
 
 jobs:
-  quality-checks:
-    runs-on: ubuntu-latest
+    quality-checks:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22' # or your version
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22' # or your version
 
-      - name: Install Bun
-        run: npm i -g bun
+            - name: Install Bun
+              run: npm i -g bun
 
-      - name: Install Dependencies
-        run: bun i
+            - name: Install Dependencies
+              run: bun i
 
-      - name: Run ESLint Check
-        run: bun run lint
+            - name: Run ESLint Check
+              run: bun run lint
 
-      - name: Run Prettier Check
-        run: bun run format:check
+            - name: Run Prettier Check
+              run: bun run format:check
