@@ -1,4 +1,4 @@
-name: Code Quality Checks
+name: Check Code Quality and Deploy
 
 on:
     push:
@@ -29,3 +29,11 @@ jobs:
 
             - name: Run Prettier Check
               run: bun run format:check
+
+    deploy:
+        needs: quality-checks
+        runs-on: ubuntu-latest
+        if: success()
+        steps:
+            - name: Trigger Vercel Deploy Hook
+              run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"
