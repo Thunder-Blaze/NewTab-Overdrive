@@ -1,3 +1,5 @@
+export const runtime = 'nodejs' // For Vercek to run this in nodejs
+
 import axios from 'axios'
 import chalk from 'chalk'
 import { NextResponse, type NextRequest } from 'next/server'
